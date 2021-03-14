@@ -24,13 +24,9 @@ public class Task1 {
      */
     public static void main(String[] args) throws IOException {
 
-
-
         Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
 
-
-        Logic logic = new Logic();
-        System.out.println("Result is -> " + logic.getResult(data));
+        System.out.println("Result is -> " + new Logic().getResult(data));
     }
 
 }
