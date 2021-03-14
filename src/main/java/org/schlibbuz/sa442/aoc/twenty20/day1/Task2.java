@@ -16,22 +16,24 @@ import org.apache.commons.io.FileUtils;
  *
  * @author Stefan
  */
-public class Task1 {
+public class Task2 {
 
     /**
      * @param args the command line arguments
-     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
 
         boolean solutionFound = false;
 
+        Set<Short> numbers = FileUtils.readLines(new File("src/main/java/org/schlibbuz/sa442/aoc/twenty20/day1/input"), "ISO-8859-1")
+                                .stream()
+                                .map(n -> Short.parseShort(n))
+                                .collect(Collectors.toSet());
 
-        Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
+        Set<Short> addedVariants = new HashSet<>();
 
-
-        for (Short number : data) {
-            if (data.contains((short)(Constants.SUM_TARGET - number))) {
+        for (Short number : numbers) {
+            if (numbers.contains((short)(Constants.SUM_TARGET - number))) {
                 System.out.println("Factors are -> " + number + " and -> " + (Constants.SUM_TARGET - number));
                 System.out.println("Result is -> " + (number * (Constants.SUM_TARGET - number) ) );
                 solutionFound = true;
@@ -41,6 +43,7 @@ public class Task1 {
         if (solutionFound == false) {
             System.out.println("No Solution found :(");
         }
+
     }
 
 }
