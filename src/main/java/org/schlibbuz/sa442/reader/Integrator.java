@@ -18,10 +18,14 @@ import org.apache.commons.io.FileUtils;
  */
 public final class Integrator {
 
-    private final NutriTable
+    private final NutriTable nutriTable;
+    private final File nutriFile;
 
     public Integrator(String path) throws IOException {
-        lines = FileUtils.readLines(new File(path), "utf8");
+        nutriTable = new NutriTable(
+                FileUtils.readLines(new File(path), "utf8")
+        );
+        lines = ;
         data = new LinkedHashMap<>();
     }
 
