@@ -24,23 +24,13 @@ public class Task1 {
      */
     public static void main(String[] args) throws IOException {
 
-        boolean solutionFound = false;
 
 
         Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
 
 
-        for (Short number : data) {
-            if (data.contains((short)(Constants.SUM_TARGET - number))) {
-                System.out.println("Factors are -> " + number + " and -> " + (Constants.SUM_TARGET - number));
-                System.out.println("Result is -> " + (number * (Constants.SUM_TARGET - number) ) );
-                solutionFound = true;
-                break;
-            }
-        }
-        if (solutionFound == false) {
-            System.out.println("No Solution found :(");
-        }
+        Logic logic = new Logic();
+        System.out.println("Result is -> " + logic.getResult(data));
     }
 
 }
