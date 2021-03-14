@@ -18,17 +18,14 @@ public class Logic {
 
     Long getResult(Set<Short> data, byte numSummands) {
 
-        boolean solutionFound = false;
-
         for (Short number : data) {
             if (data.contains((short)(Constants.SUM_TARGET - number))) {
                 System.out.println("Factors are -> " + number + " and -> " + (Constants.SUM_TARGET - number));
                 return (long)(number * (Constants.SUM_TARGET - number) );
             }
         }
-        if (solutionFound == false) {
-            System.out.println("No Solution found :(");
-        }
+
+        System.out.println("No Solution found :(");
         return null;
     }
 
