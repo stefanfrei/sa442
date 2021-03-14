@@ -15,6 +15,6 @@ final class Constants {
     static final String CHARSET = "ISO-8859-1";
     static final String FILE_PREFIX = "src/main/java/org/schlibbuz/sa442/aoc/twenty20/day1/";
     static final String INPUT_FILE_PROD = FILE_PREFIX + "input";
-    static final String INPUT_FILE_TEST_ABSTRACT = FILE_PREFIX + "input";
+    static final String INPUT_FILE_TEST_ABSTRACT = FILE_PREFIX + "input-test-abstract";
     static final String INPUT_FILE_TEST_CONCRETE = FILE_PREFIX + "input-test-concrete";
 }
