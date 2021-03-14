@@ -45,28 +45,13 @@ public class LogicTest<T> {
      * Test of getResult method, of class Logic.
      */
     @Test
-    public void testGetResultTestAbstract() throws IOException {
-        System.out.println("getResult");
-        Logic instance = new Logic();
-        String expResult = "AABB";
-        long result = instance.getResult(DataLoader.getInstance().getSetFromFile("input-test-abstract"), (byte)2);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getResult method, of class Logic.
-     */
-    @Test
     public void testGetResultTestConcrete() throws IOException {
         System.out.println("getResult");
         Logic instance = new Logic();
         long expResult = 563124L;
         long result = instance.getResult(DataLoader.getInstance().getSetFromFile("input-test-concrete"), (byte)2);
+        System.out.println("Result is -> " + result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,9 +63,8 @@ public class LogicTest<T> {
         Logic instance = new Logic();
         long expResult = 996996L;
         long result = instance.getResult(DataLoader.getInstance().getSetFromFile("input"), (byte)2);
+        System.out.println("Result is -> " + result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
 }
