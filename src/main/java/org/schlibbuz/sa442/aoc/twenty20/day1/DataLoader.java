@@ -8,6 +8,7 @@ package org.schlibbuz.sa442.aoc.twenty20.day1;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.apache.commons.io.FileUtils;
@@ -16,11 +17,12 @@ import org.apache.commons.io.FileUtils;
  *
  * @author Stefan
  */
-public class DataLoader<T> {
+public class DataLoader {
 
-    private HashMap<String, Set<T>> cache;
     private static DataLoader instance = null;
     private static final boolean USE_CACHE = false;
+
+    private final HashMap<String, Set<Short>> cache;
 
     private DataLoader() {
         cache = new HashMap<>();
@@ -33,9 +35,9 @@ public class DataLoader<T> {
         return instance;
     }
 
-    Set<T> getSetFromFile(final String fileName) throws IOException {
+    Set getSetFromFile(final String fileName) throws IOException {
 
-        return FileUtils.readLines(
+        return new LinkedHashSet<Short>(FileUtils.readLines(
                 new File(
                         new StringBuilder(Constants.FILE_PREFIX) //filename
                                 .append(fileName)
@@ -44,15 +46,7 @@ public class DataLoader<T> {
                 Constants.CHARSET
         )
         .stream()
-        .map(n -> {
-            try {
-                Short.parseShort(n);
-                return (T)Short.valueOf(n);
-            } catch(NumberFormatException e) {
-                System.err.println(e.getMessage());
-                return (T)n; //needed to work with abstract sample data
-            }
-        })
-        .collect(Collectors.toSet());
+        .map(n -> Short.valueOf(n))
+        .collect(Collectors.toSet()));
     }
 }

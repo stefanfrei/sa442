@@ -20,8 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class LogicTest<T> {
 
-    private Set<T> data;
-
     public LogicTest() {
     }
 
@@ -43,26 +41,26 @@ public class LogicTest<T> {
 
     /**
      * Test of getResult method, of class Logic.
+     * @throws java.io.IOException
      */
     @Test
     public void testGetResultTestConcrete() throws IOException {
         System.out.println("getResult");
-        Logic instance = new Logic();
         long expResult = 563124L;
-        long result = instance.getResult(DataLoader.getInstance().getSetFromFile("input-test-concrete"), (byte)2);
+        long result = new Logic().getResult(DataLoader.getInstance().getSetFromFile("input-test-concrete"), (byte)2);
         System.out.println("Result is -> " + result);
         assertEquals(expResult, result);
     }
 
     /**
      * Test of getResult method, of class Logic.
+     * @throws java.io.IOException
      */
     @Test
     public void testGetResultProd() throws IOException {
         System.out.println("getResult");
-        Logic instance = new Logic();
         long expResult = 996996L;
-        long result = instance.getResult(DataLoader.getInstance().getSetFromFile("input"), (byte)2);
+        long result = new Logic().getResult(DataLoader.getInstance().getSetFromFile("input"), (byte)2);
         System.out.println("Result is -> " + result);
         assertEquals(expResult, result);
     }
