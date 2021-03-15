@@ -27,6 +27,8 @@ public class Main {
 
     static void task1() {
 
+        System.out.println("\nTask 1");
+
         try {
             Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
             System.out.println("Result is -> " + new Logic().getResult(data));
@@ -40,9 +42,14 @@ public class Main {
 
     static void task2() {
 
+        System.out.println("\nTask 2");
+
         try {
             Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
-            System.out.println("Result is -> " + new Logic().getResult(data, Constants.SUMMANDS.THREE.getNumVal()));
+            System.out.println("Result is -> " + new Logic().getResult(
+                    data,
+                    Summands.THREE.val()
+            ));
 
         } catch(IOException e) {
             System.err.println(e.getMessage());
