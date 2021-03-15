@@ -10,7 +10,7 @@ package org.schlibbuz.sa442.aoc.twenty20.day1;
  * @author Stefan
  */
 enum Summands {
-    TWO((byte)2), THREE((byte)3);
+    TWO((byte)2), THREE((byte)3), FOUR((byte)4);
 
     private byte numVal;
 
