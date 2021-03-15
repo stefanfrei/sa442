@@ -47,7 +47,7 @@ public class LogicTest<T> {
     public void testGetResultTestConcrete() throws IOException {
         System.out.println("getResult");
         long expResult = 563124L;
-        long result = new Logic().getResult(DataLoader.getInstance().getSetFromFile("input-test-concrete"), (byte)2);
+        long result = new Logic().getResult(DataLoader.getInstance().getSetFromFile("input-test-concrete"), Summands.TWO);
         System.out.println("Result is -> " + result);
         assertEquals(expResult, result);
     }
@@ -60,7 +60,7 @@ public class LogicTest<T> {
     public void testGetResultProd() throws IOException {
         System.out.println("getResult");
         long expResult = 996996L;
-        long result = new Logic().getResult(DataLoader.getInstance().getSetFromFile("input"), (byte)2);
+        long result = new Logic().getResult(DataLoader.getInstance().getSetFromFile("input"), Summands.TWO);
         System.out.println("Result is -> " + result);
         assertEquals(expResult, result);
     }

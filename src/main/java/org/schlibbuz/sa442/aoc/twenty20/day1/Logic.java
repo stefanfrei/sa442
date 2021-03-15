@@ -16,7 +16,7 @@ public class Logic {
     public Logic() {}
 
 
-    Long getResult(Set<Short> data, byte numSummands) {
+    Long getResult(Set<Short> data, Summands numSummands) {
 
         for (Short number : data) {
             if (data.contains((short)(Constants.SUM_TARGET - number))) {
@@ -31,6 +31,6 @@ public class Logic {
 
     long getResult(Set<Short> data) {
 
-        return getResult(data, (byte)2);
+        return getResult(data, Summands.TWO);
     }
 }

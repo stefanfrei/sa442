@@ -48,7 +48,7 @@ public class Main {
             Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
             System.out.println("Result is -> " + new Logic().getResult(
                     data,
-                    Summands.THREE.val()
+                    Summands.THREE
             ));
 
         } catch(IOException e) {
