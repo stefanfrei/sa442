@@ -42,7 +42,7 @@ public class Main {
 
         try {
             Set<Short> data = DataLoader.getInstance().getSetFromFile("input");
-            System.out.println("Result is -> " + new Logic().getResult(data));
+            System.out.println("Result is -> " + new Logic().getResult(data, Constants.SUMMANDS.THREE.getNumVal()));
 
         } catch(IOException e) {
             System.err.println(e.getMessage());
